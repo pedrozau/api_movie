@@ -16,6 +16,7 @@ model User {
    name String
    username String @unique 
    password String 
+   createAt DateTime  @default(now())
 
    @@map("users")
 }
