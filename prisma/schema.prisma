@@ -16,7 +16,11 @@ model User {
    name String
    username String @unique 
    password String 
+<<<<<<< HEAD
    resfresh_token RefreshToken?
+=======
+   createAt DateTime  @default(now())
+>>>>>>> 27123d2f1de95e47d2fea47fabb3b00b3d1b0c98
 
    @@map("users")
 }

@@ -1,5 +1,7 @@
 require('dotenv').config() 
+
 import express, { NextFunction, Request, Response } from 'express'
+import cors from 'cors'
 import "express-async-errors"
 import { login } from './routes/authuserRoute'
 import { routeFilmes } from './routes/filmes'
@@ -7,6 +9,8 @@ import { userRoute } from './routes/userRoute'
 
 const server = express()
 const PORT = process.env.PORT
+
+server.use(cors())
 server.use(express.json())
 server.use('/api/v1/user', userRoute)
 server.use('/api/v1/auth',login)
