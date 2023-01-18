@@ -1,6 +1,8 @@
 import { compare } from "bcryptjs"
 import { sign } from "jsonwebtoken"
 import { database } from "../../prisma/connect"
+import { GenerateRefreshToken } from "../../provider/GenerateRefreshToken"
+import { GenerateToken } from "../../provider/GenerateToken"
 
 interface IUser  {
  
@@ -34,12 +36,20 @@ export class AuthUserUseCase {
             throw new Error("User or password is incorrect")
         }
 
-        const token = sign({},"94a08da1fecbb6e8b46990538c7b50b2", {
-            subject:userAlready.id,
-            expiresIn:'60s'
+        const generateToken = new GenerateToken() 
+
+        const token = await generateToken.execute(userAlready.id)
+
+        await database.refreshToken.deleteMany({ 
+            where:{
+                userId: userAlready.id
+            }
         })
 
-        return token 
+        const generaterefreshtoken = new GenerateRefreshToken()
+        const refreshToken = await generaterefreshtoken.execute(userAlready.id)
+
+        return  {token, refreshToken}
 
 
       }
