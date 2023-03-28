@@ -1,6 +1,8 @@
-# URL:https://apimovie.onrender.com
+                      # MOVIE-API 
 
-#  Api de filmes com  The Movie Database (TMDB) 
+ URL:https://apimovie.onrender.com
+
+ Api de filmes com  The Movie Database (TMDB) 
 
 
 
@@ -8,6 +10,7 @@
 
 ```
  yarn install 
+
 
 ```
 
@@ -18,10 +21,10 @@
 
 ```
 
-# Api routes
-   *   /api/v1/user  
-   *   /api/v1/auth 
-   *  /api/v1/movie  
+Api routes
+      /api/v1/user  
+      /api/v1/auth 
+     /api/v1/movie  
 
 
 
