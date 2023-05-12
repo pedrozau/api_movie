@@ -7,11 +7,11 @@
 
 
 # How to install dependencies 
-```
+´´´
  yarn install 
 
 
-```
+´´´
 
 # How to start the server 
 
