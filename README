@@ -6,17 +6,17 @@
 
 
 
-# How to install dependencies 
+How to install dependencies 
 ``` 
  yarn install 
 ```
 
-# How to start the server 
+ How to start the server 
 
 ```
  yarn start
 
-```
+``` 
 
 Api routes
       /api/v1/user  
