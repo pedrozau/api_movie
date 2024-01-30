@@ -10,7 +10,7 @@ interface IRequest  {
 export class CreateUserUseCase {
     
     async execute({name, username, password}:IRequest) {
-          // user already existe 
+          // user already exist
           const useralreadyexiste = await database.user.findFirst({
              where: {
                 username
@@ -33,8 +33,6 @@ export class CreateUserUseCase {
           })
 
           return user 
-
-         
 
     }
 
